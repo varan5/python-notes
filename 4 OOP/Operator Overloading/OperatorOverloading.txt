@@ -1,0 +1,86 @@
+Operator Overloading
+------------------------
+Python provides a rich set of operators to act on operands 
+of primitive datatypes.
+But by default the support of the same is not extended to 
+custom (class) type objects.
+Hence the use of class objects as operands of expressions 
+causes TypeError.
+
+In order to allow the use of objects as operands of expression, 
+Python supports definition of special methods corresponding to 
+operators.
+
+Defining special methods, corresponding to operators, 
+that host logic of operator action on objects is termed as 
+Operator Overloading.
+
+Once an operator is overloaded then on its use with objects 
+as operands causes invokation of the corresponding special method 
+with operands (objects) as parameters to it. The method code 
+executes implementing the operators action.
+
+
+====================================================================
+Following list describes association between the operand
+and the special function to be defined for overloading.
+====================================================================
+Assignment Operators		Special Function
+
+x -= y				__isub__(self, other)
+x += y				__iadd__(self, other)
+x *= y				__imul__(self, other)
+x /= y				__idiv__(self, other)
+x //= y				__ifloordiv__(self, other)
+x %= y				__imod__(self, other)
+x **= y				__ipow__(self, other)
+x >>= y				__irshift__(self, other)
+x <<= y				__ilshift__(self, other)
+x &= y				__iand__(self, other)
+x |= y				__ior__(self, other)
+x ^= y				__ixor__(self, other)
+
+====================================================================
+Comparison Operators		Special Function
+
+x < y				__lt__(self, other)
+x > y				__gt__(self, other)
+x <= y				__le__(self, other)
+x >= y				__ge__(self, other)
+x == y				__eq__(self, other)
+x != y	 			__ne__(self, other)
+
+====================================================================
+Binary Operators		Special Function
+
+x – y				__sub__(self, other)
+x + y				__add__(self, other)
+x * y				__mul__(self, other)
+x / y 				__truediv__(self, other)
+x // y				__floordiv__(self, other)
+x % y				__mod__(self, other)
+x ** y				__pow__(self, other)
+x >> y				__rshift__(self, other)
+x << y				__lshift__(self, other)
+x & y				__and__(self, other)
+x | y				__or__(self, other)
+x ^ y 				__xor__(self, other)
+
+====================================================================
+Unary Operators			Special Function
+
+–x				__neg__(self)
++x				__pos__(self)
+~x				__invert__(self)
+====================================================================
+
+
+FYI:
+Each operator behaves differently per different type. 
+For example, the + operator will, perform arithmetic addition 
+on two numbers, merge two lists and  concatenate two strings.
+
+This feature, in Python, that allows same operator to have 
+different meaning according to the context is application of 
+Polymorphism.
+
